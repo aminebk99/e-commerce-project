@@ -51,8 +51,8 @@ const SlideCard = () => {
         <>
             <Container
                 style={{ borderRadius: ".4rem" }}
-                className='shadow-sm p-3 bg-light'>
-                <h1>Flash Sale</h1>
+                className='shadow-sm mb-4 p-3 bg-light'>
+                <h2>Flash Sale</h2>
                 <Row>
                     <Carousel responsive={responsive}>
                         {product.map((product) => (
