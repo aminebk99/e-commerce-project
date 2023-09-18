@@ -4,7 +4,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const CardItem = ({ id, title, price, imgURL, rate }) => {
     return (
-        <Card style={{ width: '18rem', margin: '1rem' }}>
+        <Card 
+        className="shadow"
+        style={{ width: '18rem', margin: '1rem' }}>
             <Card.Img variant="top" src={imgURL} style={{ objectFit: 'cover' }} height={"200px"} />
             <Card.Body>
                 <Card.Text>
