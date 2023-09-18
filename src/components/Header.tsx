@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./Header.css"
+import logo from '../assets/react.svg'
 
 const Header = () => {
     return (
@@ -23,7 +24,7 @@ const Header = () => {
                 <div className="logo">
                     <Link to={'/'}>
 
-                        Emmable
+                        <img src={logo} alt="logo" />
 
                     </Link>
                 </div>
