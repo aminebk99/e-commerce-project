@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Button } from "react-bootstrap";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +14,7 @@ const CardItem = ({ id, title, price, imgURL, rate }) => {
                     {price}
                 </Card.Title>
                 <Card.Text>
-                    <span><FontAwesomeIcon style={{color: "#ffaa28"}} icon={faStar} /> {rate}</span>
+                    <span><FontAwesomeIcon style={{ color: "#ffaa28" }} icon={faStar} /> {rate}</span>
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
             </Card.Body>
