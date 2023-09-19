@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Button } from "react-bootstrap";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-const CardItem = ({ id, title, price, imgURL, rate }) => {
+const CardItem: React.FC<{ id: number; title: string; price: number; imgURL: string; rate: number }> = ({ title, price, imgURL, rate }) => {
     return (
         <Card 
         className="shadow"

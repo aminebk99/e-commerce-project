@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

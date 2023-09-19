@@ -1,4 +1,3 @@
-
 import { Container, Row } from 'react-bootstrap'
 import CardItem from './CardItem'
 import axios from 'axios';
@@ -6,30 +5,34 @@ import { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+interface Product {
+    id: number;
+    title: string;
+    image: string;
+    price: number;
+    rating: {
+        rate: number;
+    };
+}
 
-const SlideCard = () => {
-
-
-    const [product, setProduct] = useState([]);
+const SlideCard: React.FC = () => {
+    const [product, setProduct] = useState<Product[]>([]);
 
     useEffect(() => {
-        fecthProduct();
+        fetchProduct();
     }, []);
 
-    const fecthProduct = async () => {
+    const fetchProduct = async () => {
         try {
-
-            const response = await axios.get("https://fakestoreapi.com/products");
+            const response = await axios.get<Product[]>("https://fakestoreapi.com/products");
             setProduct(response.data);
         } catch (error) {
             console.error(error);
         }
     }
 
-
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 5
         },
@@ -57,24 +60,19 @@ const SlideCard = () => {
                     <Carousel responsive={responsive}>
                         {product.map((product) => (
                             <CardItem
-                                rate={product.rating.rate}
+                                rate={product?.rating?.rate}
                                 key={product.id}
                                 id={product.id}
                                 title={product.title}
                                 imgURL={product.image}
                                 price={product.price}
                             />
-
                         ))}
                     </Carousel>
-
                 </Row>
-
-
-
             </Container>
         </>
-    )
+    );
 }
 
-export default SlideCard
+export default SlideCard;
