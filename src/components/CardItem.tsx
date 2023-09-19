@@ -18,7 +18,7 @@ const CardItem = ({ id, title, price, imgURL, rate }) => {
                 <Card.Text>
                     <span><FontAwesomeIcon style={{ color: "#ffaa28" }} icon={faStar} /> {rate}</span>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">Details</Button>
             </Card.Body>
         </Card>
     )
