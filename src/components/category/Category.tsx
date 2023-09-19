@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import './category.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -21,14 +21,21 @@ const Category = () => {
 
     return (
         <>
-            <Container className="p-0 mb-4 d-flex justify-content-between">
-                {categories.map((cat, index) => (
-
-                    <div key={index} className="cards bg-light shadow-sm">
-                        <span>Icons</span>
-                        <h5>{cat}</h5>
-                    </div>
-                ))}
+            <Container className="mt-5">
+                <h2>Popular Categories</h2>
+                <Container className="p-0 mb-4">
+                    <Row xl={4} lg={3} md={2} xs={1} className="w-100 d-flex justify-content-center">
+                        {/* Move the mapping logic into the Col component */}
+                        {categories.map((cat, index) => (
+                            <Col key={index}>
+                                <div className="cards bg-light shadow-sm">
+                                    <span>Icons</span>
+                                    <h5>{cat}</h5>
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
             </Container>
         </>
     );
