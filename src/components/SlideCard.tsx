@@ -24,7 +24,7 @@ const SlideCard: React.FC = () => {
 
     const fetchProduct = async () => {
         try {
-            const response = await axios.get<Product[]>("https://fakestoreapi.com/products?limit=6");
+            const response = await axios.get<Product[]>("https://fakestoreapi.com/products?limit=5");
             setProduct(response.data);
         } catch (error) {
             console.error(error);
