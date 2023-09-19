@@ -13,7 +13,7 @@ const CardItem: React.FC<{ id: number; title: string; price: number; imgURL: str
                     <h6>{title}</h6>
                 </Card.Text>
                 <Card.Title>
-                    {price}
+                    ${price}
                 </Card.Title>
                 <Card.Text>
                     <span><FontAwesomeIcon style={{ color: "#ffaa28" }} icon={faStar} /> {rate}</span>
