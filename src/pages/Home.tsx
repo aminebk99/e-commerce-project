@@ -1,4 +1,5 @@
 
+import Footer from "../components/footer/Footer"
 import Header from "../components/Header"
 import SlideCard from "../components/SlideCard"
 import SlideHeader from "../components/SlideHeader"
@@ -12,6 +13,8 @@ const Home = () => {
         <SlideCard />
 
         <Category />
+
+        <Footer />
         
         </>
     )
