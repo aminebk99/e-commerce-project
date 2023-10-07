@@ -9,7 +9,7 @@ import logo from '../assets/react.svg';
 const Header = () => {
     return (
         <>
-            <Container fluid className='d-flex justify-content-between p-3 bg-light'>
+            {/* <Container fluid className='d-flex justify-content-between p-3 bg-light'>
                 <div>
                     <span>Call us : (00) 33 169 7720</span>
                 </div>
@@ -25,7 +25,7 @@ const Header = () => {
                     <span className='about'>About Emmable</span>
                     <span>helps</span>
                 </div>
-            </Container>
+            </Container> */}
             <Container fluid className=' mb-4 shadow-sm d-flex align-items-center justify-content-between p-3'>
                 <div className='logo'>
                     <Link to={'/'}>
