@@ -52,7 +52,6 @@ const CardBuyNow: React.FC<{ id: number; title: string; price: number; imgURL: s
                     <Link to={`/checkout/${id}`}className="m-0 p-0">
                         <Button
                             style={{
-                                marginLeft: '1rem',
                                 background: '#5A4098',
                                 border: 'none',
                                 color: 'white'
