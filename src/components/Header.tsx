@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { faShoppingCart, faList } from '@fortawesome/free-solid-svg-icons'; // Import the correct icon
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Import the correct icon
 
 import './Header.css';
 import logo from '../assets/react.svg';
