@@ -34,7 +34,7 @@ const ProductPage = () => {
     return (
         <>
             <Header />
-            <Container className="w-100 p-0">
+            <Container className="w-100 d-flex justify-content-center ">
                 <Row className="w-100">
                     <Col xl={3} sm={12} className="mb-5">
                         {product && (

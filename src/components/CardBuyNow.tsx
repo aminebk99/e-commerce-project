@@ -39,17 +39,18 @@ const CardBuyNow: React.FC<{ id: number; title: string; price: number; imgURL: s
                     <span>${totalPrice}</span>
                 </Col>
                 <Col xl={12} className="mb-3 d-flex justify-content-center align-items-center">
+                <Link to={`/addtocart/${id}`} className="w-100">
                     <Button
                         style={{
-                            marginLeft: '1rem',
                             background: 'none',
                             border: "solid #5A4098 1px",
                             color: '#5A4098'
                         }}
                         className="w-100">Add To Cart</Button>
+                        </Link>
                 </Col>
                 <Col xl={12} className="mb-3 d-flex justify-content-center align-items-center">
-                    <Link to={`/checkout/${id}`}className="m-0 p-0">
+                    <Link to={`/checkout/${id}`} className="w-100">
                         <Button
                             style={{
                                 background: '#5A4098',
