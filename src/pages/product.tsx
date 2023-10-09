@@ -24,25 +24,28 @@ const ProductPage = () => {
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
 
-    useEffect(() => {
-        fetchProduct();
-    }, [id]);
 
-    const fetchProduct = async () => {
-        try {
-            const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-            setProduct(response.data);
-        } catch (error) {
-            console.error(error);
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+                setProduct(response.data);
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
+        fetchProduct()
+    }, [setProduct, id]);
+
+
 
     return (
         <>
             <Header />
             <Container className="w-100 d-flex justify-content-center ">
                 <Row className="w-100">
-                    <Col xl={3} sm={12} className="mb-5 bg-light h-100 rounded-4">
+                    <Col xl={3} sm={12} className="mb-5 bg-light rounded-4">
                         {product && (
                             <img src={product.image} alt={product.title} style={{ width: "100%" }} />
                         )}

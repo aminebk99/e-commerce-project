@@ -13,6 +13,7 @@ const Home = () => {
         <SlideCard />
 
         <Category />
+        
 
         <Footer />
         
