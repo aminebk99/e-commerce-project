@@ -5,6 +5,7 @@ import Product from "./pages/product"
 import ErrorPage from "./pages/ErrorPage"
 import Register from "./pages/Register"
 import Products from "./pages/Products"
+import ThanksPage from "./pages/ThanksPage"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/thanks" element={<ThanksPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

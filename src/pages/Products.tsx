@@ -54,8 +54,8 @@ const Products = () => {
                             <FilterProducts />
                             
                         </Col>
-                        <Col xl={9} md={3} sm={1}>
-                            <Row xl={3} lg={2} md={2} sm={1}>
+                        <Col className="w-100 d-flex justify-content-center">
+                            <Row className="d-flex justify-content-center w-100" xl={3} lg={2} md={1} sm={1}>
                                 {products &&
                                     products.map((product) => (
                                         <Col key={product.id}>
