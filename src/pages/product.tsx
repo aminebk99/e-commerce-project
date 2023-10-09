@@ -4,23 +4,29 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CardBuyNow from "../components/CardBuyNow";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 interface Product {
     id: number;
     title: string;
     image: string;
     price: number;
+    category: string;
+    description: string;
+    rating: {
+        rate: number;
+        count: number;
+    }
 }
 
-
-
 const ProductPage = () => {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
 
     useEffect(() => {
         fetchProduct();
-    }, []);
+    }, [id]);
 
     const fetchProduct = async () => {
         try {
@@ -36,7 +42,7 @@ const ProductPage = () => {
             <Header />
             <Container className="w-100 d-flex justify-content-center ">
                 <Row className="w-100">
-                    <Col xl={3} sm={12} className="mb-5">
+                    <Col xl={3} sm={12} className="mb-5 bg-light h-100 rounded-4">
                         {product && (
                             <img src={product.image} alt={product.title} style={{ width: "100%" }} />
                         )}
@@ -45,13 +51,22 @@ const ProductPage = () => {
                         {product && (
                             <>
                                 <h4>{product.title}</h4>
-                                <h6>${product.price}.00</h6>
+                                <span className="me-3">
+                                    <FontAwesomeIcon style={{ color: "#ffaa28" }} icon={faStar} /> {product.rating.rate}
+                                </span>
+                                <span>Sold {product.rating.count}</span>
+                                <h6 className="mt-3 mb-3">${product.price}.00</h6>
+                                <h6 className="mb-3 mt-3">Category : <span>{product.category}</span> </h6>
+                                <h4>Description :</h4>
+                                <p>
+                                    {product.description}
+                                </p>
                             </>
                         )}
                     </Col>
-                    <Col className="bg-light" xl={2}>
+                    <Col className="bg-light rounded-4 shadow-sm" xl={2}>
                         {product && (
-                            <CardBuyNow id={product.id} title={product.title} price={product.price} imgURL={product.image} /> 
+                            <CardBuyNow id={product.id} title={product.title} price={product.price} imgURL={product.image} />
                         )}
                     </Col>
                 </Row>

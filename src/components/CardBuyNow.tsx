@@ -14,7 +14,7 @@ const CardBuyNow: React.FC<{ id: number; title: string; price: number; imgURL: s
     };
 
     return (
-        <div className="card-buy">
+        <div className="card-buy rounded-4">
             <Row className="w-100">
                 <Col xl={12}
                     style={{ borderBottom: 'solid 1px rgb(230, 230, 230)' }}

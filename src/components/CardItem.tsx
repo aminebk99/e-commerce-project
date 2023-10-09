@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 
 const CardItem: React.FC<{ id: number; title: string; price: number; imgURL: string; rate: number }> = ({ id, title, price, imgURL, rate }) => {
     return (
-        <Card 
-        className="shadow"
-        style={{ width: '18rem', margin: '1rem' }}>
+        <Card
+            className="shadow"
+            style={{ width: '18rem', margin: '1rem' }}>
             <Card.Img variant="top" src={imgURL} style={{ objectFit: 'cover' }} height={"200px"} />
             <Card.Body>
-                <Card.Text>
-                    <h6>{title}</h6>
-                </Card.Text>
                 <Card.Title>
-                    ${price}
+                    <h6>{title}</h6>
                 </Card.Title>
+                <Card.Text>
+                    ${price}
+                </Card.Text>
                 <Card.Text>
                     <span><FontAwesomeIcon style={{ color: "#ffaa28" }} icon={faStar} /> {rate}</span>
                 </Card.Text>
                 <Link to={`/product/${id}`}>
-                <Button variant="primary">Details</Button>
+                    <Button variant="primary">Details</Button>
                 </Link>
             </Card.Body>
         </Card>
