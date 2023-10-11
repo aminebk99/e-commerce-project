@@ -1,12 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Container, Form } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Import the correct icon
 
 import './Header.css';
 import logo from '../assets/react.svg';
+import { useState } from 'react';
 
 const Header = () => {
+    const [search, setSearch] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        navigate('/products');
+    }
+
     return (
         <Container fluid className=' mb-4 shadow-sm d-flex align-items-center justify-content-between p-3'>
             <div className='logo'>
@@ -22,7 +31,15 @@ const Header = () => {
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </Form.Select> */}
-                <input className='pl-2' type="search" placeholder='Search Here...' />
+                <Form onSubmit={handleSubmit}>
+
+                    <input
+                        className='pl-2'
+                        type="search"
+                        placeholder='Search Here...'
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)} />
+                </Form>
             </div>
             <div className='cart'>
                 <FontAwesomeIcon style={{ color: '#808080' }} icon={faShoppingCart} /> {/* Use the correct icon */}
