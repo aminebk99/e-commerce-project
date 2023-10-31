@@ -43,8 +43,8 @@ const ProductPage = () => {
     return (
         <>
             <Header />
-            <Container className="w-100 d-flex justify-content-center ">
-                <Row className="w-100">
+            <Container className="w-100 mt-5 mb-5">
+                <Row className="d-flex justify-content-center">
                     <Col xl={3} sm={12} className="mb-5 bg-light rounded-4">
                         {product && (
                             <img src={product.image} alt={product.title} style={{ width: "100%" }} />
