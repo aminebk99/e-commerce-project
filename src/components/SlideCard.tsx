@@ -57,7 +57,7 @@ const SlideCard: React.FC = () => {
                 className='shadow-sm mb-4 p-3 bg-light'>
                 <h2>Flash Sale</h2>
                 <Row>
-                    <Carousel responsive={responsive}>
+                    <Carousel responsive={responsive} className='d-flex justify-content-center w-100'>
                         {product.map((product) => (
                             <CardItem
                                 rate={product?.rating?.rate}

@@ -27,7 +27,6 @@ const Register: React.FC = () => {
                                 required
                                 type="text"
                                 placeholder="First name"
-                                defaultValue="Mark"
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
@@ -37,7 +36,6 @@ const Register: React.FC = () => {
                                 required
                                 type="text"
                                 placeholder="Last name"
-                                defaultValue="Otto"
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
