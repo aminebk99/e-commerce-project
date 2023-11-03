@@ -26,4 +26,4 @@ RUN npm run build
 EXPOSE 5173
 
 # Define the command to start the application
-CMD [ "npm", "run", "serve", "--", "--port", "5173" ]
+CMD [ "npm", "run", "dev", "--", "--port", "5173" ]
