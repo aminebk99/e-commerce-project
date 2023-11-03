@@ -1,8 +1,14 @@
-# Use an official Node.js runtime as the base image
-FROM node:14
+# Use an official Node.js runtime as the base image with Node.js 18
+FROM node:18
 
 # Set the working directory in the container
 WORKDIR /app
+
+# Update npm to a compatible version (npm 8)
+RUN npm install -g npm@8
+
+# Clear npm cache
+RUN npm cache clean -f
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
