@@ -3,18 +3,26 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom"
 
-interface Product{
-    id : string,
-    title : string,
-    imgURL : string
+interface Product {
+    id: number;
+    title: string;
+    image: string;
+    price: number;
+    category: string;
+    description: string;
+    rating: {
+        rate: number;
+        count: number;
+    }
 }
 
 const Checkout = () => {
-    const[product, setProduct] = useState({});
-    const { id } = useParams();
-    useEffect(() =>{
+    const { id } = useParams<{ id: string }>();
+    const [product, setProduct] = useState<Product | null>(null);
+
+    useEffect(() => {
         fetchProduct()
-    }, [id])
+    }, [setProduct, id])
     const fetchProduct = async ()=>{
         try {
             const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
@@ -35,8 +43,8 @@ const Checkout = () => {
                             <span>change</span>
                         </Col>
                         <Col>
-                            <p>{product?.title}</p>
-                            <span>{product?.title}</span>
+                            <p>{product.title}</p>
+                            <span>{product.title}</span>
                         </Col>
 
                     </Row>
