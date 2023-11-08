@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom"
 
+interface Product{
+    id : string,
+    title : string,
+    imgURL : string
+}
+
 const Checkout = () => {
     const[product, setProduct] = useState({});
     const { id } = useParams();
@@ -29,8 +35,8 @@ const Checkout = () => {
                             <span>change</span>
                         </Col>
                         <Col>
-                            <p>{product.title}</p>
-                            <span>change</span>
+                            <p>{product?.title}</p>
+                            <span>{product?.title}</span>
                         </Col>
 
                     </Row>
