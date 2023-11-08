@@ -15,7 +15,6 @@ interface Product {
         count: number;
     };
 }
-
 const Checkout = () => {
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
@@ -29,14 +28,13 @@ const Checkout = () => {
                 console.error(error);
             }
         };
-
-        fetchProduct(); // Call the fetchProduct function inside useEffect
-    }, [id]); // Add id to the dependency array
+        fetchProduct();
+    }, [id]);
 
     return (
         <Container>
-            <Row>
-                <Col>
+            <Row >
+                <Col xl={2}>
                     <h3>Checkout</h3>
                     <Row>
                         <Col>
@@ -47,13 +45,28 @@ const Checkout = () => {
                             {product && (
                                 <div>
                                     <p>{product.title}</p>
-                                    <span>{product.title}</span>
                                 </div>
                             )}
                         </Col>
                     </Row>
                 </Col>
-                <Col>Username and details products</Col>
+                <Col>
+                    <Row>
+                        <div>
+                            <Col>
+                                <h4>Tonny toys</h4>
+                                <span className="mute">Jakarta Timur</span>
+                            </Col>
+                            <Col className="d-flex align-items-center justify-content-between bg-primary mt-5">
+                                <div className="d-flex align-items-center">
+                                    <img src={product?.image} width={'80px'} alt={product?.image} />
+                                    <h6 className="d-inline-block ml-5">{product?.title}</h6>
+                                </div>
+                                <h4>{product?.price}</h4>
+                            </Col>
+                        </div>
+                    </Row>
+                </Col>
             </Row>
         </Container>
     );
