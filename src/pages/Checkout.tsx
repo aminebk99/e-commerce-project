@@ -36,8 +36,8 @@ const Checkout = () => {
             <Row >
                 <Col xl={2}>
                     <h3>Checkout</h3>
-                    <Row>
-                        <Col>
+                    <Row xl={1}>
+                        <Col >
                             <p>Contact information</p>
                             <span>change</span>
                         </Col>
@@ -51,7 +51,7 @@ const Checkout = () => {
                     </Row>
                 </Col>
                 <Col>
-                    <Row>
+                    <Row xl={2}>
                         <div>
                             <Col>
                                 <h4>Tonny toys</h4>

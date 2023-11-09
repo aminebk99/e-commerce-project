@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import axios from "axios";
 import CardBuyNow from "../components/CardBuyNow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import SpinnerLoading from "../components/SpinnerLoading";
 
 interface Product {
     id: number;
@@ -23,14 +24,16 @@ interface Product {
 const ProductPage = () => {
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
-
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
         const fetchProduct = async () => {
             try {
+                setLoading(true)
                 const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
                 setProduct(response.data);
+                setLoading(false)
             } catch (error) {
                 console.error(error);
             }
@@ -44,6 +47,11 @@ const ProductPage = () => {
         <>
             <Header />
             <Container className="w-100 mt-5 mb-5">
+                {
+                    loading ? (
+                        <SpinnerLoading />
+
+                    ) : (
                 <Row className="d-flex justify-content-center">
                     <Col xl={3} sm={12} className="mb-5 bg-light rounded-4">
                         {product && (
@@ -73,6 +81,9 @@ const ProductPage = () => {
                         )}
                     </Col>
                 </Row>
+
+                    )
+                }
             </Container>
         </>
     );
