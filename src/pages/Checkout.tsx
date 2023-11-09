@@ -55,23 +55,30 @@ const Checkout = () => {
                         <div className="shadow p-4 rounded d-flex flex-column">
                             <h4>Tonny Toys</h4>
                             <span className="text-muted">jakarta Timur</span>
-                            <div className="d-flex mb-4 mt-4 align-items-center justify-content-between">
+
+                            <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
                                 <div className="d-flex align-items-center">
                                     <img src={product?.image} width={'50px'} alt={product?.image} />
-                                    <h6 className="ml-4">{product?.title}</h6>
-                                </div>
-                                <h4>{product?.price}</h4>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center">
-                                    <img src={product?.image} width={'50px'} alt={product?.image} />
-                                    <div className="ml-4">
-                                    <h6 className="ml-4">{product?.title}</h6>
-                                    <span className="text-muted" style={{fontSize:('.8rem')}}>item</span>
+                                    <div className="ml-2">
+                                        <h6>{product?.title}</h6>
+                                        <span className="text-muted" style={{ fontSize: '.8rem' }}>1 item</span>
                                     </div>
                                 </div>
                                 <h4>{product?.price}</h4>
                             </div>
+
+
+                            <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
+                                <div className="d-flex align-items-center">
+                                    <img src={product?.image} width={'50px'} alt={product?.image} />
+                                    <div className="ml-4">
+                                        <h6 className="ml-4">{product?.title}</h6>
+                                        <span className="text-muted" style={{ fontSize: ('.8rem') }}>item</span>
+                                    </div>
+                                </div>
+                                <h4>{product?.price}</h4>
+                            </div>
+
                         </div>
                     </Row>
                 </Col>
