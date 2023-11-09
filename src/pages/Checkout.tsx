@@ -52,18 +52,26 @@ const Checkout = () => {
                 </Col>
                 <Col>
                     <Row xl={2}>
-                        <div>
-                            <Col>
-                                <h4>Tonny toys</h4>
-                                <span className="mute">Jakarta Timur</span>
-                            </Col>
-                            <Col className="d-flex align-items-center justify-content-between bg-primary mt-5">
+                        <div className="shadow p-4 rounded d-flex flex-column">
+                            <h4>Tonny Toys</h4>
+                            <span className="text-muted">jakarta Timur</span>
+                            <div className="d-flex mb-4 mt-4 align-items-center justify-content-between">
                                 <div className="d-flex align-items-center">
-                                    <img src={product?.image} width={'80px'} alt={product?.image} />
-                                    <h6 className="d-inline-block ml-5">{product?.title}</h6>
+                                    <img src={product?.image} width={'50px'} alt={product?.image} />
+                                    <h6 className="ml-4">{product?.title}</h6>
                                 </div>
                                 <h4>{product?.price}</h4>
-                            </Col>
+                            </div>
+                            <div className="d-flex align-items-center justify-content-between">
+                                <div className="d-flex align-items-center">
+                                    <img src={product?.image} width={'50px'} alt={product?.image} />
+                                    <div className="ml-4">
+                                    <h6 className="ml-4">{product?.title}</h6>
+                                    <span className="text-muted" style={{fontSize:('.8rem')}}>item</span>
+                                    </div>
+                                </div>
+                                <h4>{product?.price}</h4>
+                            </div>
                         </div>
                     </Row>
                 </Col>
