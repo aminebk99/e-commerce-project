@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 interface Product {
@@ -35,26 +35,28 @@ const Checkout = () => {
     // const total = (tax + shipping + product?.price).toFixed(2);
 
     return (
-        <Container className="p-0">
-            <Row >
-                <Col xl={2}>
+        <Container className="p-0 w-100">
+            <Row className="d-flex justify-content-between">
+                <Col xl={7} className="me-5">
                     <h3>Checkout</h3>
-                    <Row xl={1}>
-                        <Col >
-                            <p>Contact information</p>
-                            <span>change</span>
-                        </Col>
+                    <Row >
+                        
                         <Col>
-                            {product && (
-                                <div>
-                                    <p>{product.title}</p>
-                                </div>
-                            )}
+                            <Form>
+                                <Form.Group className="mb-3" controlId="formGroupEmail">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="formGroupPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                            </Form>
                         </Col>
                     </Row>
                 </Col>
-                <Col>
-                    <Row xl={2}>
+                <Col xl={4}>
+                    <Row>
                         <div className="shadow p-4 rounded d-flex flex-column">
                             <h4>Tonny Toys</h4>
                             <span className="text-muted">jakarta Timur</span>
@@ -102,11 +104,12 @@ const Checkout = () => {
                                         <span>Tax</span>
                                         <span>$0</span>
                                     </Col>
-                                    <Col className="d-flex justify-content-between mb-2">
+                                    <Col className="d-flex justify-content-between mb-4">
                                         <span>Shipping</span>
                                         <span>$0</span>
                                     </Col>
-                                    <Col className="d-flex justify-content-between mt-4 mb-2">
+                                    <hr className="border" />
+                                    <Col className="d-flex justify-content-between mt-2 mb-2">
                                         <span><h4>Total</h4></span>
                                         <span>${product?.price}</span>
                                     </Col>
