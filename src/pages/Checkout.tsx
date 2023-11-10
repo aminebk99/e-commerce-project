@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 interface Product {
     id: number;
@@ -40,17 +40,52 @@ const Checkout = () => {
                 <Col xl={7} className="me-5">
                     <h3>Checkout</h3>
                     <Row >
-                        
+
                         <Col>
+                            <Row className="d-flex w-100">
+                                <Col className="d-flex justify-content-between mt-4">
+                                    <h4>Contact information</h4>
+                                    <span>Already have an account? <Link to={"/login"}>log in</Link></span>
+                                </Col>
+                            </Row>
                             <Form>
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control type="email" placeholder="Your email" />
                                 </Form.Group>
-                                <Form.Group className="mb-3" controlId="formGroupPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
+                                <Row>
+                                    <Col>
+                                        <Form.Group className="mb-3" controlId="formGroupFirstname">
+                                            <Form.Control type="text" placeholder="First name" />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group className="mb-3" controlId="Lastname">
+                                            <Form.Control type="text" placeholder="Last name" />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <Form.Group className="mb-3" controlId="formGroupAddress">
+                                    <Form.Control type="text" placeholder="Address" />
                                 </Form.Group>
+                                <Form.Group className="mb-3" controlId="formGroupCity">
+                                    <Form.Control type="text" placeholder="City" />
+                                </Form.Group>
+                                <Row>
+                                    <Col>
+                                        <Form.Group className="mb-3" controlId="formGroupFirstname">
+                                            <Form.Control type="text" placeholder="First name" />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group className="mb-3" controlId="formGroupPostalCode">
+                                            <Form.Control type="text" placeholder="Postal code" />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <Form.Group className="mb-3" controlId="formGroupPhone">
+                                    <Form.Control type="text" placeholder="Phone" />
+                                </Form.Group>
+
                             </Form>
                         </Col>
                     </Row>
