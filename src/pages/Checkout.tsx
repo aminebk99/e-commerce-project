@@ -1,7 +1,10 @@
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import Header from "../components/Header";
 
 interface Product {
     id: number;
@@ -35,127 +38,144 @@ const Checkout = () => {
     // const total = (tax + shipping + product?.price).toFixed(2);
 
     return (
-        <Container className="p-0 w-100">
-            <Row className="d-flex justify-content-between">
-                <Col xl={7} className="me-5">
-                    <h3>Checkout</h3>
-                    <Row >
+        <>
+            <Header />
+            <Container className="p-0 w-100">
+                <Row className="d-flex justify-content-between">
+                    <Col xl={7} className="me-5">
+                        <h3>Checkout</h3>
+                        <Row >
 
-                        <Col>
-                            <Row className="d-flex w-100">
-                                <Col className="d-flex justify-content-between mt-4">
-                                    <h4>Contact information</h4>
-                                    <span>Already have an account? <Link to={"/login"}>log in</Link></span>
-                                </Col>
-                            </Row>
-                            <Form>
-                                <Form.Group className="mb-3" controlId="formGroupEmail">
-                                    <Form.Control type="email" placeholder="Your email" />
-                                </Form.Group>
-                                <Row>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formGroupFirstname">
-                                            <Form.Control type="text" placeholder="First name" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="Lastname">
-                                            <Form.Control type="text" placeholder="Last name" />
-                                        </Form.Group>
+                            <Col>
+                                <Row className="d-flex w-100">
+                                    <Col className="d-flex justify-content-between mt-4">
+                                        <h4>Contact information</h4>
+                                        <span>Already have an account?
+                                            <Link className="text-decoration-none"
+                                                style={{ color: 'rgb(90, 64, 152)' }}
+                                                to={"/login"}> log in</Link>
+                                        </span>
                                     </Col>
                                 </Row>
-                                <Form.Group className="mb-3" controlId="formGroupAddress">
-                                    <Form.Control type="text" placeholder="Address" />
-                                </Form.Group>
-                                <Form.Group className="mb-3" controlId="formGroupCity">
-                                    <Form.Control type="text" placeholder="City" />
-                                </Form.Group>
-                                <Row>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formGroupFirstname">
-                                            <Form.Control type="text" placeholder="First name" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col>
-                                        <Form.Group className="mb-3" controlId="formGroupPostalCode">
-                                            <Form.Control type="text" placeholder="Postal code" />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Form.Group className="mb-3" controlId="formGroupPhone">
-                                    <Form.Control type="text" placeholder="Phone" />
-                                </Form.Group>
+                                <Form>
+                                    <Form.Group className="mb-3" controlId="formGroupEmail">
+                                        <Form.Control type="email" placeholder="Your email" />
+                                    </Form.Group>
+                                    <Row>
+                                        <Col>
+                                            <Form.Group className="mb-3" controlId="formGroupFirstname">
+                                                <Form.Control type="text" placeholder="First name" />
+                                            </Form.Group>
+                                        </Col>
+                                        <Col>
+                                            <Form.Group className="mb-3" controlId="Lastname">
+                                                <Form.Control type="text" placeholder="Last name" />
+                                            </Form.Group>
+                                        </Col>
+                                    </Row>
+                                    <Form.Group className="mb-3" controlId="formGroupAddress">
+                                        <Form.Control type="text" placeholder="Address" />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formGroupCity">
+                                        <Form.Control type="text" placeholder="City" />
+                                    </Form.Group>
+                                    <Row>
+                                        <Col>
+                                            <Form.Group className="mb-3" controlId="formGroupFirstname">
+                                                <Form.Control type="text" placeholder="First name" />
+                                            </Form.Group>
+                                        </Col>
+                                        <Col>
+                                            <Form.Group className="mb-3" controlId="formGroupPostalCode">
+                                                <Form.Control type="text" placeholder="Postal code" />
+                                            </Form.Group>
+                                        </Col>
+                                    </Row>
+                                    <Form.Group className="mb-3" controlId="formGroupPhone">
+                                        <Form.Control type="text" placeholder="Phone" />
+                                    </Form.Group>
+                                    <Row className="w-100 ">
+                                        <Col className="d-flex justify-content-between align-items-center mt-4">
+                                                <Link
+                                                className="text-decoration-none text-dark"
+                                                to={"/products"}>
+                                                <FontAwesomeIcon icon={faAngleLeft} /> Return to cart
+                                                </Link>
+                                            <Button style={{ padding: '10px 20px', border: 'none', background: 'rgb(90, 64, 152)' }}>Continue</Button>
+                                        </Col>
+                                    </Row>
 
-                            </Form>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col xl={4}>
-                    <Row>
-                        <div className="shadow p-4 rounded d-flex flex-column">
-                            <h4>Tonny Toys</h4>
-                            <span className="text-muted">jakarta Timur</span>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col xl={4}>
+                        <Row>
+                            <div className="shadow p-4 rounded d-flex flex-column">
+                                <h4>Tonny Toys</h4>
+                                <span className="text-muted">jakarta Timur</span>
 
-                            <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
-                                <div className="d-flex align-items-center">
-                                    <img src={product?.image} width={'50px'} alt={product?.image} />
-                                    <div className="ml-2">
-                                        <h6>{product?.title}</h6>
-                                        <span className="text-muted" style={{ fontSize: '.8rem' }}>1 item</span>
+                                <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
+                                    <div className="d-flex align-items-center">
+                                        <img src={product?.image} width={'50px'} alt={product?.image} />
+                                        <div className="ml-2">
+                                            <h6>{product?.title}</h6>
+                                            <span className="text-muted" style={{ fontSize: '.8rem' }}>1 item</span>
+                                        </div>
                                     </div>
+                                    <h4>{product?.price}</h4>
                                 </div>
-                                <h4>{product?.price}</h4>
-                            </div>
 
-                            <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
-                                <div className="d-flex align-items-center">
-                                    <img src={product?.image} width={'50px'} alt={product?.image} />
-                                    <div className="ml-4">
-                                        <h6 className="ml-4">{product?.title}</h6>
-                                        <span className="text-muted" style={{ fontSize: ('.8rem') }}>item</span>
+                                <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
+                                    <div className="d-flex align-items-center">
+                                        <img src={product?.image} width={'50px'} alt={product?.image} />
+                                        <div className="ml-4">
+                                            <h6 className="ml-4">{product?.title}</h6>
+                                            <span className="text-muted" style={{ fontSize: ('.8rem') }}>item</span>
+                                        </div>
                                     </div>
+                                    <h4>{product?.price}</h4>
                                 </div>
-                                <h4>{product?.price}</h4>
-                            </div>
-                            <hr className="border" />
-                            <div className="mb-4 mt-4 d-flex align-items-center justify-content-center">
-                                <input
-                                    type="text"
-                                    style={{ height: '3.2rem', outline: 'none' }}
-                                    placeholder="Enter gift code or discount code"
-                                    className="rounded w-100 border p-2"
-                                />
+                                <hr className="border" />
+                                <div className="mb-4 mt-4 d-flex align-items-center justify-content-center">
+                                    <input
+                                        type="text"
+                                        style={{ height: '3.2rem', outline: 'none' }}
+                                        placeholder="Enter gift code or discount code"
+                                        className="rounded w-100 border p-2"
+                                    />
+
+                                </div>
+                                <hr className="border" />
+                                <div className="mt-2">
+                                    <h3>Shopping summary</h3>
+                                    <Row className="w-100 mt-4 d-flex flex-column">
+                                        <Col className="d-flex justify-content-between mb-2">
+                                            <span>Subtotal</span>
+                                            <span>${product?.price}</span>
+                                        </Col>
+                                        <Col className="d-flex justify-content-between mb-2">
+                                            <span>Tax</span>
+                                            <span>$0</span>
+                                        </Col>
+                                        <Col className="d-flex justify-content-between mb-4">
+                                            <span>Shipping</span>
+                                            <span>$0</span>
+                                        </Col>
+                                        <hr className="border" />
+                                        <Col className="d-flex justify-content-between mt-2 mb-2">
+                                            <span><h4>Total</h4></span>
+                                            <span>${product?.price}</span>
+                                        </Col>
+                                    </Row>
+                                </div>
 
                             </div>
-                            <hr className="border" />
-                            <div className="mt-2">
-                                <h3>Shopping summary</h3>
-                                <Row className="w-100 mt-4 d-flex flex-column">
-                                    <Col className="d-flex justify-content-between mb-2">
-                                        <span>Subtotal</span>
-                                        <span>${product?.price}</span>
-                                    </Col>
-                                    <Col className="d-flex justify-content-between mb-2">
-                                        <span>Tax</span>
-                                        <span>$0</span>
-                                    </Col>
-                                    <Col className="d-flex justify-content-between mb-4">
-                                        <span>Shipping</span>
-                                        <span>$0</span>
-                                    </Col>
-                                    <hr className="border" />
-                                    <Col className="d-flex justify-content-between mt-2 mb-2">
-                                        <span><h4>Total</h4></span>
-                                        <span>${product?.price}</span>
-                                    </Col>
-                                </Row>
-                            </div>
-
-                        </div>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 
