@@ -32,19 +32,9 @@ const CheckoutCart: React.FC<CheckoutCartProps> = ({ product }) => {
                         <span className="text-muted" style={{ fontSize: '.8rem' }}>1 item</span>
                     </div>
                 </div>
-                <h4>{product?.price}</h4>
+                <h4>${product?.price}</h4>
             </div>
 
-            <div className="d-flex align-items-center mt-4 mb-4 justify-content-between">
-                <div className="d-flex align-items-center">
-                    <img src={product?.image} width={'50px'} alt={product?.image} />
-                    <div className="ml-4">
-                        <h6 className="ml-4">{product?.title}</h6>
-                        <span className="text-muted" style={{ fontSize: ('.8rem') }}>item</span>
-                    </div>
-                </div>
-                <h4>{product?.price}</h4>
-            </div>
             <hr className="border" />
             <div className="mb-4 mt-4 d-flex align-items-center justify-content-center">
                 <input
