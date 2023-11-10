@@ -7,10 +7,10 @@ import Register from "./pages/Register"
 import Products from "./pages/Products"
 import ThanksPage from "./pages/ThanksPage"
 import Checkout from "./pages/Checkout"
+import TrackingProduct from "./pages/TrackingProduct"
 
 function App() {
   return (
-    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,10 +21,10 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/products" element={<Products />} />
           <Route path="/thanks" element={<ThanksPage />} />
+          <Route path="/tracking" element={<TrackingProduct />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
-    </>
   )
 }
 

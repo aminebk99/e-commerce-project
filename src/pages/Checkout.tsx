@@ -102,7 +102,9 @@ const Checkout = () => {
                                                 to={"/products"}>
                                                 <FontAwesomeIcon icon={faAngleLeft} /> Return to cart
                                             </Link>
+                                            <Link to={"/thanks"}>
                                             <Button style={{ padding: '10px 20px', border: 'none', background: 'rgb(90, 64, 152)' }}>Continue</Button>
+                                            </Link>
                                         </Col>
                                     </Row>
 
