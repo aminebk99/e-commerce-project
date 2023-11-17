@@ -7,6 +7,10 @@
         {
             "src": "/products",
             "dest": "/products"
+        },
+        {
+            "src": "/login",
+            "dest": "/login"
         }
     ]
 }
