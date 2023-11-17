@@ -5,8 +5,8 @@
             "dest": "/"
         },
         {
-            "src": "/product",
-            "dest": "/product"
+            "src": "/products",
+            "dest": "/products"
         }
     ]
 }
