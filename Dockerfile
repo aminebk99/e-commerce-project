@@ -5,7 +5,7 @@ FROM node:18
 WORKDIR /app
 
 # Update npm to a compatible version (npm 8)
-RUN npm install -g npm@8
+RUN npm install -g npm@latest
 
 # Clear npm cache
 RUN npm cache clean -f
