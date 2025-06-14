@@ -4,11 +4,8 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /app
 
-# Update npm to a compatible version (npm 8)
-RUN npm install -g npm@latest
-
-# Clear npm cache
-RUN npm cache clean -f
+# Clear npm cache (optional, not necessary but safe)
+RUN npm cache clean --force
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
@@ -19,7 +16,7 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
-# Build the React project
+# Build the React project (you can remove this if running in dev mode only)
 RUN npm run build
 
 # Expose port 5173
